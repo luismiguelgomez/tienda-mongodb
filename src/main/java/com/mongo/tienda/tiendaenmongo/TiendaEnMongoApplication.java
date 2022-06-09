@@ -1,7 +1,7 @@
 package com.mongo.tienda.tiendaenmongo;
 
-import com.mongo.tienda.tiendaenmongo.models.Orden;
-import com.mongo.tienda.tiendaenmongo.repositories.OrdenRepository;
+import com.mongo.tienda.tiendaenmongo.models.Product;
+import com.mongo.tienda.tiendaenmongo.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,7 @@ public class TiendaEnMongoApplication implements CommandLineRunner {
 	 * Objeto de orden Repository
 	 */
 	@Autowired
-	OrdenRepository ordenRepository;
+	ProductRepository ordenRepository;
 
 	/**
 	 * Metodo estatico por el cual inicia el programa de spring
@@ -33,9 +33,9 @@ public class TiendaEnMongoApplication implements CommandLineRunner {
 	 */
 	@Override
 	public void run(String... args) throws Exception {
-		ordenRepository.save(new Orden("uno","calle NQS sur-54","Yes","450000","null","06"));
-		ordenRepository.save(new Orden("dos","Palmira valle - barrio las mercedes","No","8500","8778-1","06"));
-		ordenRepository.save(new Orden("tres","Medellin 124-87 - Edifiio Olaya Herrera","Yes","1000000.20","8889945-1","07"));
+		ordenRepository.save(new Product("uno", "Pulsar ns 200", "Pulsar 200 tipo carburador, frenos de disco adelante y atras", "10000000", "70"));
+		ordenRepository.save(new Product("dos", "Dominar 400", "Pulsar 400 full inyection para ahorro de gasolina, freno delantero ABS, luz led, llantas pirelli diablo roso 3", "17580000", "3"));
+		ordenRepository.save(new Product("tres", "Pulsar 180", "Pulsar 180 full inyection color plata, freno delantero ABS, luz led, llantas pirelli diablo roso 3", "8000000", "30"));
 	}
 
 }
